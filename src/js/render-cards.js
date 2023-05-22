@@ -6,7 +6,7 @@ export function renderCards() {
   const markKap = cards
     .map(e => {
       return `<li class="task-list-item">
-          <button class="task-list-item-btn">Удалить</button>
+          <button class="task-list-item-btn" data-id="${e.id}">Удалить</button>
           <h3>${e.taskName}</h3> <p>${e.taskText}</p>
         </li>`;
     })

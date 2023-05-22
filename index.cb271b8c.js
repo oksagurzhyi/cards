@@ -1,2 +1,0 @@
-const t={taskList:document.querySelector("#task-list"),form:document.querySelector("#task-form")};function e(t){const e={};return new FormData(t.currentTarget).forEach(((t,r)=>{e[r]=t})),e}var r={saveCard:function(t){let e=JSON.parse(localStorage.getItem("tasks"))||[];e.push(t),localStorage.setItem("tasks",JSON.stringify(e))}};t.form.addEventListener("submit",(function(t){t.preventDefault();const a=e(t);r.saveCard(a)}));
-//# sourceMappingURL=index.cb271b8c.js.map

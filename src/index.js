@@ -14,3 +14,15 @@
  * прибрати завдання зі списку.
  * Список із завданнями має бути доступним після перезавантаження сторінки.
  */
+import { refs } from './js/refs';
+import { createCard } from './js/create-card';
+import localStorageApi from './js/localStorageApi';
+
+refs.form.addEventListener('submit', onFormSubmit);
+function onFormSubmit(event) {
+  event.preventDefault();
+
+  const data = createCard(event);
+
+  localStorageApi.saveCard(data);
+}

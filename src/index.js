@@ -17,6 +17,7 @@
 import { refs } from './js/refs';
 import { createCard } from './js/create-card';
 import localStorageApi from './js/localStorageApi';
+import { renderCards } from './js/render-cards';
 
 refs.form.addEventListener('submit', onFormSubmit);
 function onFormSubmit(event) {
@@ -26,3 +27,5 @@ function onFormSubmit(event) {
 
   localStorageApi.saveCard(data);
 }
+
+renderCards();

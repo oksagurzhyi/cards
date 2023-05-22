@@ -1,7 +1,11 @@
+const LOCAL_STORAGE_KEY = 'tasks';
 function saveCard(data) {
-  let dataArray = JSON.parse(localStorage.getItem('tasks')) || [];
+  let dataArray = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY)) || [];
   dataArray.push(data);
-  localStorage.setItem('tasks', JSON.stringify(dataArray));
+  localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(dataArray));
+}
+function getCards() {
+  return JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY));
 }
 
-export default { saveCard };
+export default { saveCard, getCards };

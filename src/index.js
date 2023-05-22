@@ -18,12 +18,15 @@ import { refs } from './js/refs';
 import { createCard } from './js/create-card';
 import localStorageApi from './js/localStorageApi';
 import { renderCards } from './js/render-cards';
+import { renderCard } from './js/renderCard';
 
 refs.form.addEventListener('submit', onFormSubmit);
+
 function onFormSubmit(event) {
   event.preventDefault();
 
   const data = createCard(event);
+  renderCard(data);
 
   localStorageApi.saveCard(data);
 }
